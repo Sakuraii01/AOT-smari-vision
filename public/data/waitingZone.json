@@ -1,0 +1,32 @@
+[
+  {
+    "passengers": 1200,
+    "avg_time": 18,
+    "time": "6:00"
+  },
+  {
+    "passengers": 2000,
+    "avg_time": 22,
+    "time": "9:00"
+  },
+  {
+    "passengers": 2700,
+    "avg_time": 24,
+    "time": "12:00"
+  },
+  {
+    "passengers": 3200,
+    "avg_time": 30,
+    "time": "15:00"
+  },
+  {
+    "passengers": 2500,
+    "avg_time": 25,
+    "time": "18:00"
+  },
+  {
+    "passengers": 1800,
+    "avg_time": 19,
+    "time": "21:00"
+  }
+]

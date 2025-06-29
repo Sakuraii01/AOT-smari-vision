@@ -5,7 +5,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
   const navItem = [
     {
       name: "Overview",
-      path: "/",
+      path: "/overview",
     },
     {
       name: "Customer Analyze",
@@ -27,7 +27,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
     },
   ];
   return (
-    <div>
+    <div className="flex">
       <div className="w-64 fixed h-full left-0 top-0 bg-white shadow px-5">
         <img
           src="/full-icon.png"
@@ -48,7 +48,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
             </li>
           ))}
 
-          <ul className="ml-3 flex flex-col gap-4">
+          <ul className="flex flex-col gap-4">
             {customerAnalyzeSubItem.map((subItem, index) => (
               <li
                 className={`px-4 ${
@@ -65,7 +65,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
           </ul>
         </ul>
       </div>
-      <div className="ml-72 my-10">{children}</div>
+      <div className="w-3/4 ml-72 my-10">{children}</div>
     </div>
   );
 };

@@ -1,5 +1,11 @@
 import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
+import {
+  KeyboardArrowDownRounded,
+  KeyboardArrowUpRounded,
+} from "@mui/icons-material";
 export const Navbar = ({ children }: { children: React.ReactNode }) => {
+  const [openSubItem, setOpenSubItem] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const navItem = [
@@ -36,32 +42,45 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
         <ul className="pt-8 flex flex-col gap-6">
           {navItem.map((item, index) => (
             <li
-              className={`px-4 ${
+              className={`px-4 flex justify-between bg-gradient-to-br ${
                 location.pathname === item.path
-                  ? "bg-component-2"
-                  : "bg-component-1"
-              } py-3 rounded`}
-              onClick={() => navigate(item.path)}
+                  ? "from-secondary-11 to-primary-1 text-white"
+                  : "bg-white text-text-1"
+              } py-3 rounded hover:bg-secondary-3 transition-all duration-200 ease-in-out`}
+              onClick={() => {
+                if (item.name === "Customer Analyze")
+                  setOpenSubItem(!openSubItem);
+                else navigate(item.path);
+              }}
               key={index}
             >
-              {item.name}
+              <p>{item.name}</p>
+              <div>
+                {item.name === "Customer Analyze" &&
+                  (openSubItem ? (
+                    <KeyboardArrowUpRounded />
+                  ) : (
+                    <KeyboardArrowDownRounded />
+                  ))}
+              </div>
             </li>
           ))}
 
           <ul className="flex flex-col gap-4">
-            {customerAnalyzeSubItem.map((subItem, index) => (
-              <li
-                className={`px-4 ${
-                  location.pathname === subItem.path
-                    ? "bg-component-2"
-                    : "bg-component-1"
-                } py-3 rounded`}
-                onClick={() => navigate(subItem.path)}
-                key={index}
-              >
-                {subItem.name}
-              </li>
-            ))}
+            {openSubItem &&
+              customerAnalyzeSubItem.map((subItem, index) => (
+                <li
+                  className={`px-4 bg-gradient-to-br ${
+                    location.pathname === subItem.path
+                      ? "from-secondary-11 to-primary-1 text-white"
+                      : "bg-white text-text-1"
+                  } py-3 rounded hover:bg-secondary-3 transition-all duration-200 ease-in-out`}
+                  onClick={() => navigate(subItem.path)}
+                  key={index}
+                >
+                  {subItem.name}
+                </li>
+              ))}
           </ul>
         </ul>
       </div>

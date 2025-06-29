@@ -4,10 +4,12 @@ import CustomerAnalyze from "../pages/CustomerAnalyze";
 import DistributionMap from "../pages/CustomerAnalyze/DistributionMap";
 import PathAnalyze from "../pages/CustomerAnalyze/PathAnalysis";
 import ZoneMonitoring from "../pages/CustomerAnalyze/ZoneMonitoring";
+import LandingPages from "../pages/Landing";
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<LandingPages />} />
         <Route path="/overview" element={<Overview />} />
         <Route path="/customer-analyze" element={<CustomerAnalyze />}>
           <Route

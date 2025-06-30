@@ -38,6 +38,7 @@ export const Navbar = ({ children }: { children: React.ReactNode }) => {
         <img
           src="/full-icon.png"
           className="pt-8 pb-4 border-b border-border-2"
+          onClick={() => navigate("/")}
         />
         <ul className="pt-8 flex flex-col gap-6">
           {navItem.map((item, index) => (

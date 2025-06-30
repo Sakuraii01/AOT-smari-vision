@@ -3,18 +3,19 @@ const LandingPages = () => {
   const navigate = useNavigate();
   return (
     <div>
+      <img src="/Brandner inno68-01.jpg" />
       <section>
-        <img src="/Brandner inno68-01.jpg" className="absolute" />
-        <div className="absolute top-[3425px] left-[191px]">
-          <LazyYoutubePlayer videoId="TqwuqG5PPnc" />
+        <LazyYoutubePlayer videoId="TqwuqG5PPnc" />
+        <div className="w-fit mx-auto my-10">
+          <button
+            className="bg-gradient-to-br from-secondary-11 to-primary-1 text-white font-semibold rounded w-[171px] h-[40px]"
+            onClick={() => navigate("/overview")}
+          >
+            BOOK DEMO
+          </button>
         </div>
-        <button
-          className="bg-gradient-to-br from-secondary-11 to-primary-1 text-white font-semibold absolute top-[4163.5px] right-[141px] rounded w-[171px] h-[40px]"
-          onClick={() => navigate("/overview")}
-        >
-          BOOK DEMO
-        </button>
       </section>
+      <img src="/Brandner inno68-02.jpg" />
     </div>
   );
 };

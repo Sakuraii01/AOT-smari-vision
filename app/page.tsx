@@ -10,10 +10,7 @@ const LandingPages = () => {
         <LazyYoutubePlayer videoId="TqwuqG5PPnc" />
         <div className="w-fit mx-auto my-10">
           <Link href="/analytics">
-            <button
-              className="bg-gradient-to-br from-secondary-11 to-primary-1 text-white font-semibold rounded w-[171px] h-[40px]"
-              // onClick={() => navigate("/overview")}
-            >
+            <button className="bg-slate-700 text-white font-semibold rounded w-[171px] h-[40px]">
               BOOK DEMO
             </button>
           </Link>
